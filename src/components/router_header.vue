@@ -31,14 +31,14 @@ export default {
         left: 0;
         z-index: 99;
         height: 50px;
-        background: #f6eab4;
+         background: linear-gradient(to bottom,#fefdfb 0%,#E9A246 100%) !important;
         display: flex;
         align-items: center;
         text-align: center;
         box-sizing: border-box;
         padding: 0 10px;
         font-size: 14px;
-        color: #000;
+        color: black;
         .title{
             flex: 1;
         }
@@ -46,6 +46,8 @@ export default {
             position: absolute;
             left: 10px;
             top: 50%;
+            color:black;
+            font-size: 16px;
             transform: translateY(-50%);
         }
     }

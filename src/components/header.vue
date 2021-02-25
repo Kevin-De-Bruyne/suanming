@@ -26,7 +26,7 @@ export default {
 .slot-box{
     
     .iconfont{
-        color: #000;
+        color:#fbd5b7;
     font-size:20px;
     position: absolute;
     right: 10px;
@@ -36,7 +36,7 @@ export default {
 }
     .myheaders{
         text-align: center;
-        background: white;
+        background: black;
         position: fixed;
         height: 50px;
         line-height: 50px;
@@ -45,7 +45,7 @@ export default {
         left: 0;
         font-size: 14px;
         z-index: 99;
-        color: #000;
+        color: #fbd5b7;
         .container{
             position: relative;
         }
@@ -54,7 +54,7 @@ export default {
             top: 50%;
             transform: translateY(-50%);
             left: 10px;
-            color: #000;
+            color: #fbd5b7;
             font-size: 20px;
         }
     }

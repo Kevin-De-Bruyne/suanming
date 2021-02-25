@@ -5,7 +5,7 @@
        <div class="butn-box">
         <el-button class="submit-butn" size="medium"
         @click="submit()"
-        >开始算命</el-button>
+        >开始执行</el-button>
        </div>
         <div class="item" v-for="(item,index) in data" :key="index">
             {{item.Nian}}年({{item.Sui}}岁),{{item.DaYun}}大运,{{item.Desc}}
@@ -85,7 +85,7 @@ export default{
 .item{
     border-bottom:1px solid #eee;
     padding: 15px 10px;
-    color: white;
+    color: #fbd5b7;
 }
    
 .content{

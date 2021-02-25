@@ -2,7 +2,7 @@
   <div class="content">
     <header>
       <div class="left">
-        <img class="logo-img" src="../assets/logo_login.png" alt="">
+        <img class="logo-img" src="../assets/suan.png" alt="">
       </div>
       <div class="right">
         <van-popover
@@ -10,9 +10,10 @@
   trigger="click"
   :actions="actions"
   @select="onSelect"
+  ref="popover"
 >
   <template #reference>
-    <span class="text1" @click.stop="feiyong_show=true">
+    <span class="text1" @click.stop="feiyong_show=!feiyong_show">
           费用
         </span>
   </template>
@@ -33,7 +34,7 @@
         <el-button size="mini" :class="{ 'choise_style':  choise_index1=='xingzuo' }"
         @click="xingge_test()"
         >
-          性格测试
+          性格分析
         </el-button>
       </div>
     </div>
@@ -158,7 +159,7 @@
             十神
         </div>
         <div class="value-td wuxin_td">
-          <span v-for="(item,index) in data.wuxing_arr" :key="index">{{item}}</span>
+          <span v-for="(item,index) in data.wuxing_arr" class="m-r-10" :key="index">{{item}}</span>
         </div>
       </div>
       <div class="wrap-box-tabble">
@@ -225,7 +226,7 @@
       <div class="butn-box">
         <el-button class="submit-butn" size="medium"
         @click="submit()"
-        >开始算命</el-button>
+        >开始执行</el-button>
       </div>
 
     
@@ -235,14 +236,14 @@
       <!-- <div class="butn-box">
         <el-button class="submit-butn" size="medium"
         @click="submit()"
-        >开始算命</el-button>
+        >开始执行</el-button>
       </div> -->
 
   </div>
 </template>
 
 <script>
-
+import {Toast} from 'vant'
 import repalce_arr from '@/repalce_str'
 import {mapGetters} from 'vuex'
 export default {
@@ -285,7 +286,7 @@ export default {
     };
   },
   created() {
-
+    console.log(localStorage.getItem('user'))
     this.locadata()
    
 
@@ -407,7 +408,50 @@ export default {
     }
     },
     submit(){
-        let {user}=this
+       let {user}=this
+      console.log(user)
+      if(user.shenri_yue>12){
+        Toast({
+          message:'月份不能超过12'
+        })
+        // console.log(111)
+      }else if(user.shenri_nian.indexOf('.')>0){
+        Toast({
+          message:'年份不能拥有小数点'
+        })
+      }else if(user.shenri_nian<1900){
+         Toast({
+          message:'年份不能小于1900'
+        })
+      }else if(user.shenri_yue.indexOf('.')>0){
+        Toast({
+          message:'月份不能拥有小数点'
+        })
+      }else if(user.shenri_ri>31){
+        Toast({
+          message:'日不能超过31'
+        })
+      }else if(user.shenri_ri.indexOf('.')>0){
+        Toast({
+          message:'日不能拥有小数点'
+        })
+      }else if(user.shenri_shi>24){
+         Toast({
+          message:'小时不能超过24'
+        })
+      }else if(user.shenri_shi.indexOf('.')>0){
+        Toast({
+          message:'小时不能拥有小数点'
+        })
+      }else if(user.shenri_fen.indexOf('.')>0){
+        Toast({
+          message:'分钟不能拥有小数点'
+        })
+      }else if(user.shenri_fen>60){
+         Toast({
+          message:'分钟不能超过60'
+        })
+      }else{
         let shenri=user.shenri_nian+'-'+user.shenri_yue+'-'+user.shenri_ri
         this.shenri=shenri
         this.ajax({
@@ -426,8 +470,9 @@ export default {
           this.sreach_data(res)
           
         })
+      }
       },
-      sreach_data(res){
+       sreach_data(res){
         let data=res.data
         console.log(data)
         let {user}=this
@@ -645,8 +690,9 @@ $border_color:rgba(246,234,180,0.2);
   border: 1px solid rgba(246, 234, 180, 0.2);
 }
 .info-box{
-  color: white;
+  color: #fbd5b7;
   font-size: 16px;
+  text-align: center;
   border: 1px solid $border_color;
 }
 .tabble-box{
@@ -658,7 +704,7 @@ $border_color:rgba(246,234,180,0.2);
   
   display: flex;
   .title{
-    background: #f6eab4;
+    background: linear-gradient(to bottom,#fefdfb 0%,#E9A246 100%) !important;
     line-height: 30px;
     color: #000;
     flex: 1;
@@ -768,7 +814,7 @@ $border_color:rgba(246,234,180,0.2);
     padding: 0 0 0 0 !important;
 }
 header {
-  padding: 0 20px;
+  padding: 10px 0;
   display: flex;
   color: white;
   font-size: 16px;
@@ -776,8 +822,15 @@ header {
   height: 40px;
   align-items: center;
   .left {
+    margin-top: 15px;
+    img{
+         width: 230px;
+    height: 65px;
+    }
+   
   }
   .right {
+    padding-right: 15px;
     .text1 {
       color: #f6eab4;
       vertical-align: middle;
@@ -785,7 +838,7 @@ header {
     .iconfont {
       vertical-align: middle;
       margin: 0 0 0 10px;
-      color: white;
+      color: #f6eab4;
       font-size: 36px;
     }
   }
@@ -825,10 +878,13 @@ main {
   justify-content: space-between;
   padding: 0 150px;
   .item {
+  
     height: 40px;
   line-height: 40px;    
     cursor: pointer;
     span {
+        // border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
       padding: 0 0 5px 0;
     }
   }
@@ -839,7 +895,7 @@ main {
 .cate-box {
   padding: 10px ;
   display: flex;
-  color: white;
+  color: #fbd5b7;
   flex-wrap: wrap;
   .item {
     flex: 1;
@@ -860,7 +916,7 @@ main {
     font-size: 12px;
     background: none;
     border: 1px solid white;
-    color: white;
+    color: #fbd5b7;
     padding: 5px;
   }
   .choise_style {

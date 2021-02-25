@@ -160,14 +160,15 @@
 
        }
        .item-box{
-           background: white;
+           background: rgba(246,234,180,0.2);
            .item{
-               border-bottom: 1px solid #eee;
+               border-bottom: 1px solid rgb(246,234,180);
                box-sizing: border-box;
                padding: 10px;
                display: flex;
                justify-content: space-between;
-               color: #000;
+               background-color: rgba(246,234,180,0.2);
+               color:rgb(246,234,180);
                font-size: 14px;
                .left{
                    .text1{

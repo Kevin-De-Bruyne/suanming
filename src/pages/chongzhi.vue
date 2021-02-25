@@ -164,22 +164,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+html{
+    background: #5a5a5c;
+}
 .img-box{
     height: 150px;
     box-sizing: border-box;
     padding: 10px;
-    background: white;
+    background:  #5a5a5c;
+    color:#fbd5b7;
 }
 .title-text{
     font-weight: bold;
     font-size: 16px;
-    background: white;
+    background:  #5a5a5c;
     padding: 0 10px;
+    color: #fbd5b7;
 }
 .ipt-box{
     box-sizing: border-box;
     padding: 10px 20px;
-    background: white;
+    background:#5a5a5c;
+    color: #fbd5b7;
     input{
         width: 100%;
         height: 100%;
@@ -194,28 +200,43 @@ export default {
    .left{
        display: flex;
        align-items: center;
+       color:#fbd5b7;
    }
 }
  .butn{
-    background: $myzhuti;
-    color: white;
+    background: linear-gradient(to bottom,#fefdfb 0%,#E9A246 100%) !important;
+    color: black;
     text-align: center;
     height: 50px;
     line-height: 50px;
     border-radius: 60px;
     font-size: 18px;
-    padding: 0 10px;
-        margin: 50px 50px;
+    // padding: 20px 10px;
+        margin: 50px 50px 0px 50px; 
     }
+    // /deep/ .van-icon-success{
+    //     background-color: #fbd5b7;
+    // }
+    // /deep/ .van-icon{
+    //     background-color: #fbd5b7;
+    // }
     /deep/ .van-cell{
         line-height: 50px;
+        background-color: #5a5a5c ;
+        border:none;
+         color: #fbd5b7;
+        
+    }
+     /deep/ .van-cell:after{
+     border:none;
+        
     }
 .content{
-    background: rgb(237,243,243);
+    background: #5a5a5c;
 }
     .yellow-title{
-        background: rgb(252,250,223);
-        color: #886d50;
+        background: #5a5a5c;
+        color: #fbd5b7;
         box-sizing: border-box;
         padding: 0 10px;
         height: 40px;
@@ -223,7 +244,7 @@ export default {
     }
     .white-box{
         margin: 10px 0 0 0;
-        background: white;
+        background: #5a5a5c;
         border-radius: 6px;
         .title{
             border-bottom: 1px solid #eee;
@@ -231,7 +252,7 @@ export default {
             padding: 0 10px;
             height: 40px;
             line-height: 40px;
-            color: #886d50;
+             color: #fbd5b7;
         }
         .container{
             box-sizing: border-box;

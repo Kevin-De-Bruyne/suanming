@@ -2,8 +2,7 @@
     <div>
         <div class="login-box">
             <div class="title">
-                <img src="../assets/logo.png" alt="">
-                舍缘盘系统
+                <img class="logo-img" src="../assets/suan.png" alt="">
             </div>
             <div class="item-box">
                 <div class="ipt-box">
@@ -19,11 +18,18 @@
             <div class="butn" @click="submit($event)">
                 登录
             </div>
+             <div class="bottom-texts">
+                
+                <div class="left">
+                 <van-checkbox v-model="checked" shape="square" icon-size="20px" checked-color="rgb(246,234,180)"></van-checkbox>
+                 <span>记住账号密码</span>
+                </div>
+            </div>
             <div class="bottom-text">
                 <div class="left" @click="$router.push('/reg')">
                     注册
                 </div>
-                <div class="right">
+                <div class="right"  @click="forget">
                     忘记密码
                 </div>
             </div>
@@ -36,13 +42,21 @@
     export default{
         data(){
             return{
-                user:{}
+                user:{},
+                checked:true
             }
         },
         created() {
-           
+        //   this.user=localStorage.getItem('user')
+        
+             this.user.name=localStorage.getItem('name')
+               this.user.password=localStorage.getItem('password')  
+              
         },
         methods: {
+            forget(){
+                this.$router.push('/forget_pwd')
+            },
             submit(e){
                 console.log(e)
                 let {user}=this
@@ -54,8 +68,13 @@
                     }
                 }).then(res=>{
                     localStorage.setItem('token',res.data.token)
+                     if(this.checked==true){
+                    localStorage.setItem('name',this.user.name)
+                   localStorage.setItem('password',this.user.password)
+                     }
                     this.showtitle('登录成功').then(res=>{
-                        this.$router.push('/')
+                        this.$router.push('/home')
+                        location.reload();
                     })
                 })
             }
@@ -66,6 +85,9 @@
 <style lang="scss" scoped>
 $login_color:rgb(246,234,180);
 $ipt_bg:rgba(246,234,180,0.2);
+/deep/ .van-icon::before{
+    color: black;
+}
  .bg_video{
      position: fixed;
      left: 0;
@@ -95,8 +117,8 @@ $ipt_bg:rgba(246,234,180,0.2);
     }
 }
 .login-box{
-    margin: 150px 0 0 70px;
-            width: 275px;
+    margin: 50px 0 0 35px;
+            width:240px;
              background: rgba(255,255,255,0.1);
             // box-shadow: -15px 15px 15px$login_color;
             box-sizing: border-box;
@@ -145,11 +167,11 @@ $ipt_bg:rgba(246,234,180,0.2);
                 }
             }
             .butn{
-                margin: 40px auto 30px auto;
+                margin: 20px auto 30px auto;
                 border-radius: 100px;
                 border: 2px solid $login_color;
                 color: $login_color;
-                width: 100px;
+                width: 150px;
                 height: 38px;
                 line-height: 38px;
                 text-align: center;
@@ -160,12 +182,33 @@ $ipt_bg:rgba(246,234,180,0.2);
                 color: $login_color;
                 text-align: center;
                 font-size: 14px;
+                margin-top: 15px;
                 display: flex;
                 justify-content: space-between;
                 div{
                     cursor: pointer;
                     user-select: none;
                 }
+            }
+               .bottom-texts{
+                color: $login_color;
+                text-align: center;
+                font-size: 14px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .left{
+                   display: flex;
+                     flex-direction: row;
+                     span{
+                         margin-left: 15px;
+                     }
+                }
+                div{
+                    cursor: pointer;
+                    user-select: none;
+                }
+            
             }
         }
 </style>

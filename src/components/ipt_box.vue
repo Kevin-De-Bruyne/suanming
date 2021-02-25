@@ -36,7 +36,7 @@
         <!-- <select v-model="user.shenri_nian" class=""  id="">
             <option :value="item" v-for="(item,index) in riqi_arr.nian_arr" :key="index">{{item}}</option>
           </select> -->
-          <input type="text" v-model="user.shenri_nian" class="ipt" placeholder="请输入出生年月" name="" id="">
+          <input type="text" v-model="user.shenri_nian" class="ipt"  name="" id="">
           <span class="m-l-5 m-r-5">年</span>
 
           <div class="m-r-10">
@@ -45,7 +45,7 @@
             >
               <option :value="item" v-for="(item,index) in riqi_arr.yue_arr" :key="index">{{item}}</option>
             </select> -->
-            <input type="text" v-model="user.shenri_yue" class="ipt" >
+            <input type="text" v-model="user.shenri_yue" class="ipts" >
             <span class="m-l-5">月</span>
           </div>
 
@@ -53,7 +53,7 @@
             <!-- <select v-model="user.shenri_ri"  id="">
               <option :value="item" v-for="(item,index) in riqi_arr.ri_arr6" :key="index">{{item}}</option>
             </select> -->
-             <input type="text" v-model="user.shenri_ri" class="ipt" >
+             <input type="text" v-model="user.shenri_ri" class="ipts" >
             <span class="m-l-5">日</span>
           </div>
 
@@ -61,14 +61,14 @@
             <!-- <select v-model="user.shenri_shi"  id="">
               <option :value="item" v-for="(item,index) in riqi_arr.shi_arr" :key="index">{{item}}</option>
             </select> -->
-            <input type="text" v-model="user.shenri_shi" class="ipt" >
+            <input type="text" v-model="user.shenri_shi" class="ipts" >
             <span class="m-l-5">时</span>
           </div>
           <div class="m-r-10">
             <!-- <select v-model="user.shenri_fen"  id="">
               <option :value="item" v-for="(item,index) in riqi_arr.fen_arr" :key="index">{{item}}</option>
             </select> -->
-             <input type="text" v-model="user.shenri_fen" class="ipt" >
+             <input type="text" v-model="user.shenri_fen" class="ipts" >
             <span class="m-l-5">分</span>
           </div>
         </div>
@@ -127,7 +127,7 @@
           <!-- <select v-model="user.shenri_nian" class=""  id="">
             <option :value="item" v-for="(item,index) in riqi_arr.nian_arr" :key="index">{{item}}</option>
           </select> -->
-          <input type="text" v-model="user.shenri_nian" class="ipt" placeholder="请输入出生年月" name="" id="">
+          <input type="text" v-model="user.shenri_nian" class="ipt"  name="" id="">
           <span class="m-l-5 m-r-5">年</span>
 
           <div class="m-r-10">
@@ -136,7 +136,7 @@
             >
               <option :value="item" v-for="(item,index) in riqi_arr.yue_arr" :key="index">{{item}}</option>
             </select> -->
-            <input type="text" v-model="user.shenri_yue" class="ipt" >
+            <input type="text" v-model="user.shenri_yue" class="ipts" >
             <span class="m-l-5">月</span>
           </div>
 
@@ -144,7 +144,7 @@
             <!-- <select v-model="user.shenri_ri"  id="">
               <option :value="item" v-for="(item,index) in riqi_arr.ri_arr6" :key="index">{{item}}</option>
             </select> -->
-             <input type="text" v-model="user.shenri_ri" class="ipt" >
+             <input type="text" v-model="user.shenri_ri" class="ipts" >
             <span class="m-l-5">日</span>
           </div>
 
@@ -152,14 +152,14 @@
             <!-- <select v-model="user.shenri_shi"  id="">
               <option :value="item" v-for="(item,index) in riqi_arr.shi_arr" :key="index">{{item}}</option>
             </select> -->
-            <input type="text" v-model="user.shenri_shi" class="ipt" >
+            <input type="text" v-model="user.shenri_shi" class="ipts" >
             <span class="m-l-5">时</span>
           </div>
           <div class="m-r-10">
             <!-- <select v-model="user.shenri_fen"  id="">
               <option :value="item" v-for="(item,index) in riqi_arr.fen_arr" :key="index">{{item}}</option>
             </select> -->
-             <input type="text" v-model="user.shenri_fen" class="ipt" >
+             <input type="text" v-model="user.shenri_fen" class="ipts" >
             <span class="m-l-5">分</span>
           </div>
         </div>
@@ -183,7 +183,7 @@
             >
               <option :value="item" v-for="(item,index) in riqi_arr.yue_arr" :key="index">{{item}}</option>
             </select> -->
-             <input type="text" class="ipt" v-model="user.ceshi_shenri_yue" >
+             <input type="text" class="ipts" v-model="user.ceshi_shenri_yue" >
             <span class="m-l-5">月</span>
           </div>
 
@@ -191,7 +191,7 @@
             <!-- <select v-model="user.ceshi_shenri_ri"  id="">
               <option :value="item" v-for="(item,index) in riqi_arr.ri_arr6" :key="index">{{item}}</option>
             </select> -->
-             <input type="text" class="ipt" v-model="user.ceshi_shenri_ri" >
+             <input type="text" class="ipts" v-model="user.ceshi_shenri_ri" >
             <span class="m-l-5">日</span>
           </div>
         </div>
@@ -243,7 +243,7 @@
           <!-- <select v-model="user.shenri_nian" class=""  id="">
             <option :value="item" v-for="(item,index) in riqi_arr.nian_arr" :key="index">{{item}}</option>
           </select> -->
-          <input type="text" v-model="user.shenri_nian" class="ipt" placeholder="请输入出生年月" name="" id="">
+          <input type="text" v-model="user.shenri_nian" class="ipt"  name="" id="">
           <span class="m-l-5 m-r-5">年</span>
 
           <div class="m-r-10">
@@ -252,7 +252,7 @@
             >
               <option :value="item" v-for="(item,index) in riqi_arr.yue_arr" :key="index">{{item}}</option>
             </select> -->
-            <input type="text" v-model="user.shenri_yue" class="ipt" >
+            <input type="text" v-model="user.shenri_yue" class="ipts" >
             <span class="m-l-5">月</span>
           </div>
 
@@ -260,7 +260,7 @@
             <!-- <select v-model="user.shenri_ri"  id="">
               <option :value="item" v-for="(item,index) in riqi_arr.ri_arr6" :key="index">{{item}}</option>
             </select> -->
-             <input type="text" v-model="user.shenri_ri" class="ipt" >
+             <input type="text" v-model="user.shenri_ri" class="ipts" >
             <span class="m-l-5">日</span>
           </div>
 
@@ -268,14 +268,14 @@
             <!-- <select v-model="user.shenri_shi"  id="">
               <option :value="item" v-for="(item,index) in riqi_arr.shi_arr" :key="index">{{item}}</option>
             </select> -->
-            <input type="text" v-model="user.shenri_shi" class="ipt" >
+            <input type="text" v-model="user.shenri_shi" class="ipts" >
             <span class="m-l-5">时</span>
           </div>
           <div class="m-r-10">
             <!-- <select v-model="user.shenri_fen"  id="">
               <option :value="item" v-for="(item,index) in riqi_arr.fen_arr" :key="index">{{item}}</option>
             </select> -->
-             <input type="text" v-model="user.shenri_fen" class="ipt" >
+             <input type="text" v-model="user.shenri_fen" class="ipts" >
             <span class="m-l-5">分</span>
           </div>
         </div>
@@ -303,14 +303,17 @@
         </div>
 
         <div class="wrap-box">
-
+          <div class="m-r-10">
+            <input type="text" class="ipt" v-model="user.shenri_nian">
+            <span class="m-l-5">年</span>
+          </div>
           <div class="m-r-10">
             
-            <input type="text" class="ipt" v-model="user.shenri_yue">
+            <input type="text" class="ipts" v-model="user.shenri_yue">
             <span class="m-l-5">月</span>
           </div>
           <div class="m-r-10">
-            <input type="text" class="ipt" v-model="user.shenri_ri">
+            <input type="text" class="ipts" v-model="user.shenri_ri">
             <span class="m-l-5">日</span>
           </div>
         </div>

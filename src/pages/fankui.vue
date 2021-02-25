@@ -46,7 +46,7 @@
         
         <div class="butn-box m-t-40">
             <van-button color="linear-gradient(to bottom, #fefdfb 0%, #E9A246 100%)" block round @click="submit()">
-                提交
+                <span style="color:black;">提交</span>
             </van-button>
         </div>
     </div>
@@ -103,27 +103,36 @@ export default {
 .ipt-box{
     display: flex;
     height: 35px;
+    
     input{
         flex: 1;
         height: 100%;
         box-sizing: border-box;
         padding: 0 10px;
+        color:rgb(246,234,180);
         font-size: 12px;
+    }
+    input::placeholder{
+
+        color:rgb(246,234,180);
+        // font-size: 12px;
     }
 }
 .butn-box{
     box-sizing: border-box;
     padding: 0 10px;
+    color:rgb(246,234,180);
 }
 .white-box2{
-    background: white;
+    background: rgba(246,234,180,0.2);
     border-radius: 6px;
     margin: 10px 0 0 0;
     .title{
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid rgb(246,234,180);
         font-size: 14px;
         font-weight: bold;
         height: 50px;
+        color:rgb(246,234,180);
         line-height: 50px;
         box-sizing: border-box;
         padding: 0 10px;
@@ -133,22 +142,26 @@ export default {
         padding: 10px;
         font-size: 12px;
         width: 100%;
+        background: rgba(246,234,180,0.2);
         height: 200px;
-
+        color:rgb(246,234,180);
+    }
+      textarea::placeholder{
+         color:rgb(246,234,180);
     }
 }
    
    .white-box1{
-       background: white;
+       background:rgba(246,234,180,0.2);
        border-radius: 10px;
        overflow: hidden;
        .title{
            height: 50px;
            line-height: 50px;
-           border-bottom: 1px solid #eee;
+           border-bottom: 1px solid rgb(246,234,180);
            font-size: 16px;
            font-weight: bold;
-           color: #000;
+           color:rgb(246,234,180);
            box-sizing: border-box;
             padding: 0 10px;
        }
@@ -161,7 +174,7 @@ export default {
                flex: 1;
                .top{
                    font-size: 14px;
-                   color: #000;
+                   color:rgb(246,234,180);
                    box-sizing: border-box;
                    padding: 0 0 0 30px;
                }

@@ -82,7 +82,7 @@
         <div class="butn-box">
         <el-button class="submit-butn" size="medium"
         @click="submit()"
-        >开始算命</el-button>
+        >开始执行</el-button>
       </div>
 
       <div id="myChart" ref="mychart" :style="{width: '300px', height: '300px'}"></div>
@@ -295,12 +295,12 @@ color : '#fff'
 .item{
     border-bottom:1px solid #eee;
     padding: 15px 10px;
-    color: white;
+    color: #fbd5b7;
     font-size: 14px;
 }
 .title{
     font-size: 16px;
-    background: #f6eab4;
+    background: linear-gradient(to bottom,#fefdfb 0%,#E9A246 100%) !important;
     line-height: 30px;
     color: #000;
     flex: 1;

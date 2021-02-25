@@ -31,7 +31,7 @@
                 <div class="left" @click="$router.push('/login')">
                     登录
                 </div>
-                <div class="right">
+                <div class="right" @click="$router.push('/forget_pwd')">
                     忘记密码
                 </div>
             </div>

@@ -27,17 +27,24 @@ export default {
   width: 55px;
   padding: 2px 3px;
   background: white;
-  color: #000;
+  color: black;
+  margin: 0 0 10px 0;
+}
+.ipts{
+  width: 30px;
+  padding: 2px 3px;
+  background: white;
+  color:black ;
   margin: 0 0 10px 0;
 }
 .ipt::placeholder{
-  color: #000 !important;
+  color: #fbd5b7 !important;
 }
 .middle{
   vertical-align: middle;
 }
 .radio-title{
-  color: white;
+  color: #fbd5b7;
   line-height: 25px;
 }
 .van-radio{
@@ -45,7 +52,7 @@ export default {
   border: 2PX solid #f6eab4 !important;
 }
 /deep/.van-radio__label{
-  color: white !important;
+  color: #fbd5b7!important;
 }
 }
 
@@ -54,7 +61,7 @@ export default {
        padding: 10px 10px 0 10px;
    }
 .content{
-  background: rgb(242,242,242);
+  background: black;
        min-height: 100vh;
        box-sizing: border-box;
        padding: 50px 10px 0 10px;
@@ -76,7 +83,7 @@ export default {
     margin: 0 0 10px 0;
     line-height: 2;
     flex-wrap: wrap;
-    color: white;
+    color: #fbd5b7;
     select {
       padding: 2px 3px;
       width: 55px;
@@ -84,7 +91,7 @@ export default {
     .name-ipt {
 
       vertical-align: middle;
-      color: #fff;
+      color: #fbd5b7;
       height: 20px;
        width: 30px;
   background: none;

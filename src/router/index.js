@@ -22,92 +22,118 @@ import yunshi_yishen from '../pages/yunshi_yishen'
 import yunshi_meiyue from '../pages/yunshi_meiyue'
 import yunshi_meinian from '../pages/yunshi_meinian'
 import xingming from '../pages/xingming'
+import editpwd from '../pages/editpwd'
+import editnick from '../pages/editnick'
+import forget_pwd from '../pages/forget_pwd'
 
 export default new router({
-    routes:[
-        {
-            path:'/',
-            component:home
-        },
-        {
-            path:'/xiazai',
-            component:xiazai
-        },
-        {
-            path:'/minpan',
-            component:minpan
-        },
-        {
-            path:'/yunshi_meiri',
-            component:yunshi_meiri
-        },
-        {
-            path:'/yunshi_meizhou',
-            component:yunshi_meizhou
-        },
-        {
-            path:'/yunshi_yishen',
-            component:yunshi_yishen
-        },
-        {
-            path:'/yunshi_meiyue',
-            component:yunshi_meiyue
-        },
-        {
-            path:'/xingming',
-            component:xingming
-        },
-        
-        {
-            path:'/yunshi_meinian',
-            component:yunshi_meinian
-        },
-        
-        {
-            path:'/liunian',
-            component:liunian
-        },
-        {
-            path:'/minjvfenxi',
-            component:minjvfenxi
-        },
-        {
-            path:'/user',
-            component:user
-        },
-        {
-            path:'/fankui',
-            component:fankui
-        },
-        {
-            path:'/taocan',
-            component:taocan
-        },
-        {
-            path:'/chaxun',
-            component:chaxun
-        },
-        {
-            path:'/login',
-            component:login,
-            children:[
+    routes: [{
+            path: '/',
+            component: login,
+            children: [{
+                    path: '/',
+                    component: login_router
+                },
                 {
-                path:'/',
-                component:login_router
-            },
-            {
-                path:'/reg',
-                component:login_reg
-            }
-        ]
+                    path: '/reg',
+                    component: login_reg
+                }
+            ]
         },
         {
-            path:'/chongzhi',
-            component:chongzhi
+            path: '/xiazai',
+            component: xiazai
         },
         {
-            path:'/chongzhi_list',
-            component:chongzhi_list
+            path: '/home',
+            component: home
+        },
+        {
+            path: '/minpan',
+            component: minpan
+        },
+        {
+            path: '/forget_pwd',
+            component: forget_pwd
+        },
+        {
+            path: '/yunshi_meiri',
+            component: yunshi_meiri
+        },
+        {
+            path: '/yunshi_meizhou',
+            component: yunshi_meizhou
+        },
+        {
+            path: '/yunshi_yishen',
+            component: yunshi_yishen
+        },
+        {
+            path: '/editpwd',
+            component: editpwd
+        },
+        {
+            path: '/editnick',
+            component: editnick
+        },
+        {
+            path: '/yunshi_meiyue',
+            component: yunshi_meiyue
+        },
+        {
+            path: '/xingming',
+            component: xingming
+        },
+
+        {
+            path: '/yunshi_meinian',
+            component: yunshi_meinian
+        },
+
+        {
+            path: '/liunian',
+            component: liunian
+        },
+        {
+            path: '/minjvfenxi',
+            component: minjvfenxi
+        },
+        {
+            path: '/user',
+            component: user
+        },
+        {
+            path: '/fankui',
+            component: fankui
+        },
+        {
+            path: '/taocan',
+            component: taocan
+        },
+        {
+            path: '/chaxun',
+            component: chaxun
+        },
+        {
+            path: '/login',
+            component: login,
+            children: [{
+                    path: '/',
+                    component: login_router
+                },
+                {
+                    path: '/reg',
+                    component: login_reg
+                }
+            ]
+        },
+        {
+            path: '/chongzhi',
+            component: chongzhi
+        },
+        {
+            path: '/chongzhi_list',
+            component: chongzhi_list
         },
     ]
 })

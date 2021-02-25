@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-      <myheader title="性格测试" />
+      <myheader title="性格分析" />
       <iptbox type="4" />
 
         <div class="item">
@@ -11,7 +11,7 @@
         <div class="butn-box">
         <el-button class="submit-butn" size="medium"
         @click="submit()"
-        >开始算命</el-button>
+        >开始执行</el-button>
       </div>
     </div>
 </template>
@@ -102,7 +102,7 @@ import {mapGetters} from 'vuex'
   
 }
     .item{
-        color: white;
+        color:#fbd5b7;
         margin: 0 0 15px 0;
         font-size: 14px;
         .title{
