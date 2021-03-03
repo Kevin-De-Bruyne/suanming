@@ -20,11 +20,23 @@
                         {{item.pay_type==1?'银行卡':item.pay_type==2?'微信':item.pay_type==3?'支付宝':''}}
                     </div>
                     <div class="text2">
-                        {{item.create_time}}
+                       创建时间：{{item.create_time}}
+                    </div>
+                    <div class="text2" style="margin-top:10px;" v-if="item.pay_type==1">
+                       审核时间：{{item.examine_time}}
+                    </div>
+                     <div class="text2" style="margin-top:10px;" v-if="item.pay_type==1">
+                       过期时间：{{item.exp_time}}
+                    </div>
+                    <div class="text2" style="margin-top:10px;" v-if="item.pay_type==2">
+                        总次数：{{item.total_num}}
+                    </div>
+                     <div class="text2" style="margin-top:10px;" v-if="item.pay_type==2">
+                        剩余次数：{{item.number}}
                     </div>
                 </div>
                 <div class="right">
-                    ￥{{item.order_money}}
+                    <span>￥{{item.order_money}}</span>
                 </div>
             </div>
         </div>
@@ -99,17 +111,21 @@
        .item-box{
            background:rgba(246, 234, 180, 0.2);
            .item{
-               border-bottom: 1px solid #f6eab4;
+               border-bottom: 1px solid#fbd5b7;
                box-sizing: border-box;
                padding: 10px;
                display: flex;
                justify-content: space-between;
-               color: #f6eab4;
+               color:#fbd5b7;
                font-size: 14px;
                .left{
                    .text1{
                        margin: 0 0 10px 0;
                    }
+               }
+               .right{
+                   display: flex;
+                   flex-direction: column;
                }
            }
        }

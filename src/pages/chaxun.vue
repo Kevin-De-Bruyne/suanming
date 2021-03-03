@@ -64,7 +64,7 @@
                     3:'/yunshi_meiyue',
                     4:'/yunshi_meinian',
                     5:'/yunshi_yishen',
-                    6:'/',
+                    6:'/home',
                     12:'/liunian',
                     14:'/minjvfenxi',
                     15:'/xingming'

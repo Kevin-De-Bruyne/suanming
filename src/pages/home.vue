@@ -2,7 +2,8 @@
   <div class="content">
     <header>
       <div class="left">
-        <img class="logo-img" src="../assets/suan.png" alt="">
+        <img src="../assets/suan.png" alt="">
+        <!-- <span>尔吉精舍.舍缘盘</span> -->
       </div>
       <div class="right">
         <van-popover
@@ -10,7 +11,6 @@
   trigger="click"
   :actions="actions"
   @select="onSelect"
-  ref="popover"
 >
   <template #reference>
     <span class="text1" @click.stop="feiyong_show=!feiyong_show">
@@ -65,7 +65,7 @@
         <span class="m-l-5 m-r-5">:</span>
         <span class="m-r-5">{{user.sex}}</span>
 
-        出生日期
+        出生时辰
         <span class="m-r-5 m-l-5">:</span>
 
         <span class="m-r-5">{{shenri}}</span>
@@ -132,6 +132,14 @@
           {{item}}
         </div>
       </div>
+       <div class="wrap-box-tabble">
+        <div class="key-td">
+            空亡
+        </div>
+        <div class="value-td" v-for="(item,index) in data.kongwang_arr" :key="index">
+          {{item}}
+        </div>
+      </div>
       <div class="wrap-box-tabble">
         <div class="key-td">
             神煞
@@ -158,10 +166,20 @@
             <br />
             十神
         </div>
+  
         <div class="value-td wuxin_td">
-          <span v-for="(item,index) in data.wuxing_arr" class="m-r-10" :key="index">{{item}}</span>
+          <span v-for="(item,index) in data.wuxing_arr" :key="index">{{item}}</span>
         </div>
       </div>
+         <div class="rizhu-boxs">
+          <div class="left">
+            <span>{{data_old.TianGanHeChong}}</span>
+          </div>
+          <div class="right">
+            <span>{{data_old.DiZhiHeChong}}</span>
+          </div>
+        </div>  
+             
       <div class="wrap-box-tabble">
         <div class="key-td">
             交运时间
@@ -236,7 +254,7 @@
       <!-- <div class="butn-box">
         <el-button class="submit-butn" size="medium"
         @click="submit()"
-        >开始执行</el-button>
+        >开始算命</el-button>
       </div> -->
 
   </div>
@@ -272,8 +290,9 @@ export default {
           zanggan_arr:[],
           fuxing_arr:[],
           xingyun_arr:[],
-          wuxing_arr:[],
+          tianke_arr:[],
           kongwang_arr:[],
+          wuxing_arr:[],
           shensha_arr:[],
           liunian_text_arr:[],
           shensha_arr:[],
@@ -286,14 +305,13 @@ export default {
     };
   },
   created() {
-    console.log(localStorage.getItem('user'))
-    this.locadata()
-   
+    // this.locadata()
+    
 
     this.getdata()
   },
   mounted() {
-
+ 
     
   },
   watch:{
@@ -408,7 +426,7 @@ export default {
     }
     },
     submit(){
-       let {user}=this
+      let {user}=this
       console.log(user)
       if(user.shenri_yue>12){
         Toast({
@@ -471,8 +489,10 @@ export default {
           
         })
       }
+        
+        
       },
-       sreach_data(res){
+      sreach_data(res){
         let data=res.data
         console.log(data)
         let {user}=this
@@ -500,6 +520,7 @@ export default {
             this.data.fuxing_arr=data.FuXing.split(';')
             this.data.xingyun_arr=data.XingYun.split(',')
             this.data.kongwang_arr=data.KongWan.split(',')
+
             this.data.shensha_arr=data.ShenSha.split(',')
             this.data.dayun_arr=data.DaYun.split(',')
             this.data.shensha_arr=data.ShenSha.split(';')
@@ -662,9 +683,6 @@ export default {
 $border_color:rgba(246,234,180,0.2);
 
 $border_color:rgba(246,234,180,0.2);
-.logo-img{
-  height: 40px;
-}
 .shensha-td{
   box-sizing: border-box;
   padding:  10px;
@@ -681,19 +699,33 @@ $border_color:rgba(246,234,180,0.2);
   flex-wrap: wrap;
 }
 .rizhu-box{
-  box-sizing: border-box;
-  padding: 0 40px;
   width: 100%;
   display: flex;
   line-height: 30px;
   justify-content: space-between;
   border: 1px solid rgba(246, 234, 180, 0.2);
 }
+.rizhu-boxs{
+  width: 100%;
+  display: flex;
+  line-height: 30px;
+  // justify-content: space-between;
+  border: 1px solid rgba(246, 234, 180, 0.2);
+  //  border: 1px solid #fbd5b7;
+  .left{
+    border-right: 2px solid rgba(246,234,180,0.2);
+    padding-right: 5px;
+  }
+  .right{
+    margin-left: 10px;
+  }
+}
 .info-box{
   color: #fbd5b7;
   font-size: 16px;
-  text-align: center;
+  font-size: 13px;
   border: 1px solid $border_color;
+  text-align:center;
 }
 .tabble-box{
  padding: 10px;
@@ -701,10 +733,10 @@ $border_color:rgba(246,234,180,0.2);
  color: #fbd5b7;
 }
 .wrap-box-tabble{
-  
+  // padding: 0;
   display: flex;
   .title{
-    background: linear-gradient(to bottom,#fefdfb 0%,#E9A246 100%) !important;
+    background: linear-gradient(to bottom, #fefdfb 0%, #e9a246 100%) !important;
     line-height: 30px;
     color: #000;
     flex: 1;
@@ -718,16 +750,29 @@ $border_color:rgba(246,234,180,0.2);
     align-items: center;
     justify-content: center;
     min-height:30px;
+   
   } 
   .value-td{
     min-height: 30px;
     border: 1px solid $border_color;
     display: flex;
     align-items: center;
+    width: 30px;
     flex: 1;
     justify-content: center;
   }
+   .shensha-td{
+  // height: 60px;
+  // font-size: 14px;
+  // min-width: 81px;
+  // width: 70px;
+  // letter-spacing: 10px;
+  // padding: 20px;
+  padding: 15px;
+  text-align: center;
 }
+}
+
 .red{
   color: red !important;
 }
@@ -814,31 +859,38 @@ $border_color:rgba(246,234,180,0.2);
     padding: 0 0 0 0 !important;
 }
 header {
-  padding: 10px 0;
+  padding: 0 20px;
   display: flex;
-  color: white;
+  color:#fbd5b7;
   font-size: 16px;
   justify-content: space-between;
   height: 40px;
   align-items: center;
   .left {
+    // width: 23px;
+    height: 60px;
+    display: flex;
+    width: 200px;
     margin-top: 15px;
-    img{
-         width: 230px;
-    height: 65px;
+    margin-left: -15px;
+    flex-direction: row;
+    span{
+      margin-left: 7px;
     }
-   
+    img{
+      width: 100%;
+      height: 100%;
+    }
   }
   .right {
-    padding-right: 15px;
     .text1 {
-      color: #f6eab4;
+      color:#fbd5b7;
       vertical-align: middle;
     }
     .iconfont {
       vertical-align: middle;
       margin: 0 0 0 10px;
-      color: #f6eab4;
+      color:#fbd5b7;
       font-size: 36px;
     }
   }
@@ -869,22 +921,22 @@ main {
   }
 }
 .nav-box {
-   background: linear-gradient(180deg,#fefdfb 0,#e9a246) !important;
+   background: linear-gradient(to bottom, #fefdfb 0%, #e9a246 100%) !important;
   
   color: #000;
   font-size: 12px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 150px;
+  padding: 10px 15px;
+  box-sizing: border-box;
   .item {
-  
-    height: 40px;
-  line-height: 40px;    
+    // border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    height: 20px;
+  line-height: 20px;    
     cursor: pointer;
     span {
-        // border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
       padding: 0 0 5px 0;
     }
   }
@@ -893,12 +945,11 @@ main {
   }
 }
 .cate-box {
-  padding: 10px ;
+  padding: 10px 0;
   display: flex;
-  color: #fbd5b7;
+  color:#fbd5b7;
   flex-wrap: wrap;
   .item {
-    flex: 1;
     height: 30px;
     line-height: 30px;
     width: 25%;
@@ -916,7 +967,7 @@ main {
     font-size: 12px;
     background: none;
     border: 1px solid white;
-    color: #fbd5b7;
+    color:#fbd5b7;
     padding: 5px;
   }
   .choise_style {

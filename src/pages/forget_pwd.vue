@@ -19,7 +19,7 @@
                     </div> -->
                      <div class="ipt-box">
                     <!-- <span class="iconfont icon-mima"></span> -->
-                    <input type="password" v-model="phone" placeholder="请输入手机号找回" />
+                    <input type="password" v-model="phone" placeholder="登录账号找回" />
                         
                     </div>
             </div>

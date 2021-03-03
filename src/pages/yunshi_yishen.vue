@@ -16,7 +16,7 @@
           性别
         </div>
         <van-radio-group v-model="user.sex" direction="horizontal"
-        checked-color="#f6eab4"
+        checked-color="#F6EAB4"
         >
           <van-radio name="男">男</van-radio>
           <van-radio name="女">女</van-radio>
@@ -34,7 +34,7 @@
           
         </div>
         <van-radio-group v-model="user.rili" direction="horizontal"
-        checked-color="#f6eab4"
+        checked-color="#F6EAB4"
         >
           <van-radio name="阴历">阴历</van-radio>
           <van-radio name="阳历">阳历</van-radio>

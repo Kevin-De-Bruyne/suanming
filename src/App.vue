@@ -24,7 +24,7 @@ export default {
   }
 }
 .ipt{
-  width: 55px;
+  width: 38px;
   padding: 2px 3px;
   background: white;
   color: black;
@@ -49,7 +49,7 @@ export default {
 }
 .van-radio{
   /deep/.van-icon{
-  border: 2PX solid #f6eab4 !important;
+  border: 2PX solid#fbd5b7 !important;
 }
 /deep/.van-radio__label{
   color: #fbd5b7!important;
@@ -95,7 +95,7 @@ export default {
       height: 20px;
        width: 30px;
   background: none;
-  border-bottom: 1px solid #f6eab4;
+  border-bottom: 1px solid#fbd5b7;
     }
   }
    

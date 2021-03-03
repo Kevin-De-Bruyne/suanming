@@ -18,14 +18,18 @@
             <div class="butn" @click="submit($event)">
                 登录
             </div>
-             <div class="bottom-texts">
+             <!-- <div class="bottom-texts">
                 
                 <div class="left">
                  <van-checkbox v-model="checked" shape="square" icon-size="20px" checked-color="rgb(246,234,180)"></van-checkbox>
                  <span>记住账号密码</span>
                 </div>
-            </div>
+            </div> -->
             <div class="bottom-text">
+                <div class="forget">
+               <van-checkbox v-model="checked" shape="square" icon-size="16px" checked-color="rgb(24,25,6)"></van-checkbox>
+                 <span>记住密码</span>
+                </div>
                 <div class="left" @click="$router.push('/reg')">
                     注册
                 </div>
@@ -85,9 +89,13 @@
 <style lang="scss" scoped>
 $login_color:rgb(246,234,180);
 $ipt_bg:rgba(246,234,180,0.2);
-/deep/ .van-icon::before{
-    color: black;
-}
+    /deep/ .van-checkbox__icon i{
+        border-color:  rgb(246,234,180)!important;
+        // color: rgb(246,234,180);
+    }
+    /deep/ .van-checkbox__icon--checked .van-icon{
+       color:#fbd5b7;
+    }
  .bg_video{
      position: fixed;
      left: 0;
@@ -113,11 +121,11 @@ $ipt_bg:rgba(246,234,180,0.2);
     }
     .text{
         font-size: 20px;
-        color: $login_color;
+        color:#F6EAB4;
     }
 }
 .login-box{
-    margin: 50px 0 0 35px;
+    margin: 10% 0 0 35px;
             width:240px;
              background: rgba(255,255,255,0.1);
             // box-shadow: -15px 15px 15px$login_color;
@@ -128,12 +136,17 @@ $ipt_bg:rgba(246,234,180,0.2);
             // background: linear-gradient(230deg,rgba(53,57,74,0) 0%,rgb(0,0,0) 100%);
             input{
                 outline: none;
+                color:#fbd5b7;
+            }
+               input::placeholder{
+                // outline: none;
+                // color: rgb(246,234,180)!important;
             }
             .title{
                 text-align: center;
                 font-size: 24px;
                 height: 60px;
-                color: $login_color;
+                color:#fbd5b7;
                 margin: 0 0 15px 0;
                 img{
                     vertical-align: middle;
@@ -153,24 +166,24 @@ $ipt_bg:rgba(246,234,180,0.2);
                     .iconfont{
                         margin: 0 8px 0 0;
                         font-size: 18px;
-                        color: $login_color;
+                        color:#fbd5b7;
                     }
                     input{
                         flex: 1;
                         height: 100%;
                         font-size: 12px;
-                        color:  $login_color;
+                        color: #fbd5b7;
                     }
                     input::-webkit-input-placeholder{
-                        color: white;
+                        color:#fbd5b7;
                     }
                 }
             }
             .butn{
-                margin: 20px auto 30px auto;
+                margin: 20px auto 15px auto;
                 border-radius: 100px;
-                border: 2px solid $login_color;
-                color: $login_color;
+                border: 2px solid#fbd5b7;
+                color:#fbd5b7;
                 width: 150px;
                 height: 38px;
                 line-height: 38px;
@@ -179,19 +192,27 @@ $ipt_bg:rgba(246,234,180,0.2);
                 user-select: none;
             }
             .bottom-text{
-                color: $login_color;
+                color:#fbd5b7;
                 text-align: center;
-                font-size: 14px;
-                margin-top: 15px;
+                // font-size: 14px;
+                margin-top: 7px;
+                margin-bottom: 15px;
                 display: flex;
                 justify-content: space-between;
+                .forget{
+                    display: flex;
+                    flex-direction: row;
+                    span{
+                        margin-left: 5px;
+                    }
+                }
                 div{
                     cursor: pointer;
                     user-select: none;
                 }
             }
                .bottom-texts{
-                color: $login_color;
+                color:#fbd5b7;
                 text-align: center;
                 font-size: 14px;
                 display: flex;
