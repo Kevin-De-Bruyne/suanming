@@ -94,7 +94,7 @@ $ipt_bg:rgba(246,234,180,0.2);
         // color: rgb(246,234,180);
     }
     /deep/ .van-checkbox__icon--checked .van-icon{
-       color:#fbd5b7;
+       color:#FBDF4F;
     }
  .bg_video{
      position: fixed;
@@ -121,7 +121,7 @@ $ipt_bg:rgba(246,234,180,0.2);
     }
     .text{
         font-size: 20px;
-        color:#F6EAB4;
+        color:#FBDF4F;
     }
 }
 .login-box{
@@ -136,7 +136,7 @@ $ipt_bg:rgba(246,234,180,0.2);
             // background: linear-gradient(230deg,rgba(53,57,74,0) 0%,rgb(0,0,0) 100%);
             input{
                 outline: none;
-                color:#fbd5b7;
+                color:#FBDF4F;
             }
                input::placeholder{
                 // outline: none;
@@ -146,7 +146,7 @@ $ipt_bg:rgba(246,234,180,0.2);
                 text-align: center;
                 font-size: 24px;
                 height: 60px;
-                color:#fbd5b7;
+                color:#FBDF4F;
                 margin: 0 0 15px 0;
                 img{
                     vertical-align: middle;
@@ -166,24 +166,24 @@ $ipt_bg:rgba(246,234,180,0.2);
                     .iconfont{
                         margin: 0 8px 0 0;
                         font-size: 18px;
-                        color:#fbd5b7;
+                        color:#FBDF4F;
                     }
                     input{
                         flex: 1;
                         height: 100%;
                         font-size: 12px;
-                        color: #fbd5b7;
+                        color: #FBDF4F;
                     }
                     input::-webkit-input-placeholder{
-                        color:#fbd5b7;
+                        color:#FBDF4F;
                     }
                 }
             }
             .butn{
                 margin: 20px auto 15px auto;
                 border-radius: 100px;
-                border: 2px solid#fbd5b7;
-                color:#fbd5b7;
+                border: 2px solid #FBDF4F;
+                color:#FBDF4F;
                 width: 150px;
                 height: 38px;
                 line-height: 38px;
@@ -192,7 +192,7 @@ $ipt_bg:rgba(246,234,180,0.2);
                 user-select: none;
             }
             .bottom-text{
-                color:#fbd5b7;
+                color:#FBDF4F;
                 text-align: center;
                 // font-size: 14px;
                 margin-top: 7px;
@@ -212,7 +212,7 @@ $ipt_bg:rgba(246,234,180,0.2);
                 }
             }
                .bottom-texts{
-                color:#fbd5b7;
+                color:#FBDF4F;
                 text-align: center;
                 font-size: 14px;
                 display: flex;

@@ -104,7 +104,7 @@
                 text-align: center;
                 font-size: 24px;
                 height: 60px;
-                color: $login_color;
+                color: #FBDF4F;
                 margin: 0 0 15px 0;
                 img{
                     vertical-align: middle;
@@ -124,24 +124,24 @@
                     .iconfont{
                         margin: 0 8px 0 0;
                         font-size: 18px;
-                        color: $login_color;
+                        color: #FBDF4F;
                     }
                     input{
                         flex: 1;
                         height: 100%;
                         font-size: 12px;
-                        color:  $login_color;
+                        color:  #FBDF4F;
                     }
                     input::-webkit-input-placeholder{
-                        color: white;
+                        color: #FBDF4F;
                     }
                 }
             }
             .butn{
                 margin: 40px auto 30px auto;
                 border-radius: 100px;
-                border: 2px solid $login_color;
-                color: $login_color;
+                border: 2px solid #FBDF4F;
+                color: #FBDF4F;
                 width: 100px;
                 height: 38px;
                 line-height: 38px;
@@ -150,7 +150,7 @@
                 user-select: none;
             }
             .bottom-text{
-                color: $login_color;
+                color: #FBDF4F;
                 text-align: center;
                 font-size: 14px;
                 display: flex;

@@ -28,14 +28,16 @@ export default {
   padding: 2px 3px;
   background: white;
   color: black;
-  margin: 0 0 10px 0;
+  height: 20px;
+  margin: 0 ;
 }
 .ipts{
   width: 30px;
   padding: 2px 3px;
   background: white;
   color:black ;
-  margin: 0 0 10px 0;
+  margin: -3px 0 0 0;
+  height: 20px;
 }
 .ipt::placeholder{
   color: #fbd5b7 !important;
